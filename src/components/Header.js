@@ -2,29 +2,29 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex justify-between p-4 border-b">
+    <header className="flex justify-between p-4 border-b border-yellow-400 fixed w-full top-0 bg-yellow-300 z-50 h-16">
       <div className="flex space-x-8">
         <Link href='/' className="flex space-x-2 text-red-600">
           <PawPrintIcon className="h-6 w-6" />
           <h1 className="font-bold text-xl"> Mr. Sabueso</h1>
         </Link>
         <nav className="flex space-x-4 items-center">
-          <Link className="text-m hover:underline" href="#">
+          <Link className="text-m hover:underline hover:text-red-700" href="#">
             Nuevos productos
           </Link>
-          <Link className="text-m hover:underline" href="#">
+          <Link className="text-m hover:underline hover:text-red-700" href="#">
             Regalos
           </Link>
-          <Link className="text-m hover:underline" href="#">
+          <Link className="text-m hover:underline hover:text-red-700" href="#">
             Perros
           </Link>
-          <Link className="text-m hover:underline" href="#">
+          <Link className="text-m hover:underline hover:text-red-700" href="#">
             Gatos
           </Link>
-          <Link className="text-m hover:underline" href="#">
+          <Link className="text-m hover:underline hover:text-red-700" href="#">
             Marcas
           </Link>
-          <Link className="text-m hover:underline" href="#">
+          <Link className="text-m hover:underline hover:text-red-700" href="#">
             Ofertas
           </Link>
         </nav>
@@ -32,10 +32,10 @@ export default function Header() {
       <div className="flex items-center space-x-4">
         <input className="border px-2 py-1 text-sm" placeholder="Buscar producto" />
         <Link href="#">
-          <UserIcon className="text-gray-600" />
+          <UserIcon className="text-gray-700 hover:text-red-600" />
         </Link>
         <Link href="#">
-          <ShoppingBagIcon className="text-gray-600" />
+          <ShoppingBagIcon className="text-gray-700 hover:text-red-600" />
         </Link>
       </div>
     </header>
