@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.brand-img {
+  @apply w-[100vw] h-[100px] bg-contain bg-no-repeat grayscale transition-all duration-[0.5s] ease-[ease-in-out] m-5 hover:grayscale-[0%] hover:scale-110;
+}
+.brand1 {
+  @apply bg-[url('/brands/logo-bravery.jpg')];
+}
+.brand2 {
+  @apply bg-[url('/brands/logo-canbo.jpg')];
+}
+.brand3 {
+  @apply bg-[url('/brands/logo-dogxtreme.jpg')];
+}
+.brand4 {
+  @apply bg-[url('/brands/logo-hills.jpg')];
+}
+.brand5 {
+  @apply bg-[url('/brands/logo-nath.jpg')];
+}
+.brand6 {
+  @apply bg-[url('/brands/logo-pro-plan.jpg')];
+}
+.brand7 {
+  @apply bg-[url('/brands/logo-true-origins.jpg')];
+}
+.brand8 {
+  @apply bg-[url('/brands/logo-wellness.jpg')];
+}

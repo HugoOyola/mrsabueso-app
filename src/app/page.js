@@ -39,7 +39,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="p-4">
+      {/* <section className="p-4">
         <div className="mt-4 grid grid-cols-2 gap-4">
           <div className="col-span-1">
             <Image
@@ -79,79 +79,21 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
-      <section className="bg-[#f4f4f4] p-4">
+      </section> */}
+      <section className="bg-white p-6 ">
         <h2 className="text-xl font-bold">Las marcas favoritas de tu mascota </h2>
-        <div className="mt-4 grid grid-cols-6 gap-4">
-          <img
-            alt="Marca 1"
-            className="w-full h-auto"
-            height="100"
-            src="/logos/bravery.jpg"
-            style={{
-              aspectRatio: "150/100",
-              objectFit: "cover",
-            }}
-            width="150"
-          />
-          <img
-            alt="Marca 2"
-            className="w-full h-auto"
-            height="100"
-            src="/placeholder.svg"
-            style={{
-              aspectRatio: "150/100",
-              objectFit: "cover",
-            }}
-            width="150"
-          />
-          <img
-            alt="Marca 3"
-            className="w-full h-auto"
-            height="100"
-            src="/placeholder.svg"
-            style={{
-              aspectRatio: "150/100",
-              objectFit: "cover",
-            }}
-            width="150"
-          />
-          <img
-            alt="Marca 4"
-            className="w-full h-auto"
-            height="100"
-            src="/placeholder.svg"
-            style={{
-              aspectRatio: "150/100",
-              objectFit: "cover",
-            }}
-            width="150"
-          />
-          <img
-            alt="Marca 5"
-            className="w-full h-auto"
-            height="100"
-            src="/placeholder.svg"
-            style={{
-              aspectRatio: "150/100",
-              objectFit: "cover",
-            }}
-            width="150"
-          />
-          <img
-            alt="Marca 6"
-            className="w-full h-auto"
-            height="100"
-            src="/placeholder.svg"
-            style={{
-              aspectRatio: "150/100",
-              objectFit: "cover",
-            }}
-            width="150"
-          />
+        <div className="flex justify-between mt-2 grid-cols-6 gap-4">
+          <div class="brand-img brand1"></div>
+          <div class="brand-img brand2"></div>
+          <div class="brand-img brand3"></div>
+          <div class="brand-img brand4"></div>
+          <div class="brand-img brand5"></div>
+          <div class="brand-img brand6"></div>
+          <div class="brand-img brand7"></div>
+          <div class="brand-img brand8"></div>
         </div>
       </section>
-      <section className="p-4">
+      <section className="bg-[#f4f4f4] p-4">
         <h2 className="text-xl font-bold">¡Lleva más, paga menos con estas ofertas!</h2>
         <div className="mt-4 grid grid-cols-3 gap-4">
           <div className="w-full">
@@ -159,13 +101,11 @@ export default function Home() {
               <img
                 alt="Oferta 1"
                 className="w-full h-auto"
-                height="200"
-                src="/placeholder.svg"
+                src="/banner-oferta-snacks.jpg"
                 style={{
-                  aspectRatio: "300/200",
                   objectFit: "cover",
+                  objectPosition: "center",
                 }}
-                width="300"
               />
               <p>Ofertas en alimentos seleccionados</p>
             </div>
@@ -175,13 +115,11 @@ export default function Home() {
               <img
                 alt="Oferta 2"
                 className="w-full h-auto"
-                height="200"
-                src="/placeholder.svg"
+                src="/banner-juguetes.jpg"
                 style={{
-                  aspectRatio: "300/200",
                   objectFit: "cover",
+                  objectPosition: "center",
                 }}
-                width="300"
               />
               <p>Descuentos únicos en juguetes seleccionados</p>
             </div>
@@ -191,19 +129,18 @@ export default function Home() {
               <img
                 alt="Oferta 3"
                 className="w-full h-auto"
-                height="200"
-                src="/placeholder.svg"
+                src="/banner-alimento-perro-gato.jpg"
                 style={{
-                  aspectRatio: "300/200",
                   objectFit: "cover",
+                  objectPosition: "center",
                 }}
-                width="300"
               />
               <p>Combos especiales para tu mascota</p>
             </div>
           </div>
         </div>
       </section>
+
       <section className="bg-[#f4f4f4] p-4">
         <div className="grid grid-cols-4 gap-4">
           <div>
