@@ -8,7 +8,7 @@ export default function ProductGrid({ products }) {
           <ProductCard key={index} product={product} />
         ))}
       </div>
-      <div className="text-center mt-8 mb-4">
+      <div className="text-center mt-8">
         <button className="bg-verde hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
           Más Resultados
         </button>

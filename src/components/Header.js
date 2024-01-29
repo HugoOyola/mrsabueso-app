@@ -22,9 +22,9 @@ export default function Header() {
           <Link href="/productos" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
             Productos
           </Link>
-          <Link href="/ofertas" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
+          {/* <Link href="/ofertas" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
             Ofertas
-          </Link>
+          </Link> */}
           <Link href="/marcas" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
             Marcas
           </Link>
@@ -45,7 +45,7 @@ export default function Header() {
           <Link href="#">
             <UserIcon className="text-gray-700 hover:text-red-600" />
           </Link>
-          <Link href="#">
+          <Link href="/carrito">
             <ShoppingCartIcon className="text-gray-700 hover:text-red-600" />
           </Link>
         </div>
