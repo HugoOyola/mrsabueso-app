@@ -138,7 +138,7 @@ export default function DogPage() {
       category: 'Juguetes',
       price: '4.99',
       onSale: false,
-      newProduct: false,
+      newProduct: true,
     },
     {
       image: '/productos/p16.jpg',

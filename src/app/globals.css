@@ -10,6 +10,8 @@
 .brand-img {
   @apply w-[100vw] h-[100px] bg-contain bg-no-repeat grayscale transition-all duration-[0.5s] ease-[ease-in-out] m-5 hover:grayscale-[0%] hover:scale-110;
 }
+
+/*
 .brand1 {
   @apply bg-[url('/brands/logo-bravery.jpg')];
 }
@@ -33,4 +35,4 @@
 }
 .brand8 {
   @apply bg-[url('/brands/logo-wellness.jpg')];
-}
+} */

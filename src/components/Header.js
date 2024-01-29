@@ -6,7 +6,7 @@ import "./Header.css"
 export default function Header() {
   return (
     <header className="flex w-full p-4 justify-between items-center bg-mostaza shadow-md px-4 fixed h-[70px] top-0 z-50">
-      <div className="flex w-full h-full p-4 justify-between items-center wrapper">
+      <div className="flex w-full p-4 justify-between items-center wrapper">
         {/* Logo de la Empresa */}
         <Link href={"/"}>
           <Image src="/logo.png" width={100} height={100} alt="Logo Mr. Sabueso" />
