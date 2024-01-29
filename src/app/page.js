@@ -4,12 +4,12 @@ import Carousel from "../components/Carousel";
 export default function Home() {
   return (
     <main>
-      <div className="h-16"></div>
+      <div className="h-[70px]"></div>
       <section className="p-4 bg-slate-200">
-        <h1 className="text-2xl font-bold">La tienda para mascotas felices</h1>
+        <h1 className="text-2xl text-azul font-bold">La tienda para mascotas felices</h1>
       </section>
       <Carousel />
-      <section className="flex w-full p-4 justify-between items-center h-26 bg-[#bd1e59] text-white">
+      <section className="flex w-full p-4 justify-between items-center h-26 bg-salmon text-white">
         <div className="flex items-center space-x-2">
           <TruckIcon className="text-white h-8 w-8" />
           <div>
@@ -39,103 +39,305 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <section className="p-4">
-        <div className="mt-4 grid grid-cols-2 gap-4">
-          <div className="col-span-1">
-            <Image
-              alt="Banner 1"
-              className="w-full h-auto"
-              height="300"
-              src="/banner-peluqueria.jpg"
-              style={{
-                aspectRatio: "600/300",
-                objectFit: "cover",
-              }}
-              width="600"
-            />
-          </div>
-          <div className="col-span-1 grid grid-rows-2 gap-4">
-            <Image
-              alt="Banner 2"
-              className="w-full h-auto"
-              height="150"
-              src="/banner-peluqueria.jpg"
-              style={{
-                aspectRatio: "600/150",
-                objectFit: "cover",
-              }}
-              width="600"
-            />
-            <Image
-              alt="Banner 3"
-              className="w-full h-auto"
-              height="150"
-              src="/banner-verano-home.jpg"
-              style={{
-                aspectRatio: "600/150",
-                objectFit: "cover",
-              }}
-              width="600"
-            />
-          </div>
-        </div>
-      </section> */}
       <section className="bg-white p-6 ">
         <h2 className="text-xl font-bold">Las marcas favoritas de tu mascota </h2>
         <div className="flex justify-between mt-2 grid-cols-6 gap-4">
-          <div class="brand-img brand1"></div>
-          <div class="brand-img brand2"></div>
-          <div class="brand-img brand3"></div>
-          <div class="brand-img brand4"></div>
-          <div class="brand-img brand5"></div>
-          <div class="brand-img brand6"></div>
-          <div class="brand-img brand7"></div>
-          <div class="brand-img brand8"></div>
+          <div className="brand-img brand1"></div>
+          <div className="brand-img brand2"></div>
+          <div className="brand-img brand3"></div>
+          <div className="brand-img brand4"></div>
+          <div className="brand-img brand5"></div>
+          <div className="brand-img brand6"></div>
+          <div className="brand-img brand7"></div>
+          <div className="brand-img brand8"></div>
         </div>
       </section>
-      <section className="bg-[#f4f4f4] p-4">
-        <h2 className="text-xl font-bold">¡Lleva más, paga menos con estas ofertas!</h2>
+      <section className="p-8">
+        {/* Banner de nuevos ingresos */}
+        <div className="bg-verde text-white p-4 mb-8 flex justify-between items-center">
+          <div>
+            <h2 className="text-2xl font-bold">¡Nuevos Ingresos!</h2>
+            <p>Descubre nuestras últimas adiciones al catálogo.</p>
+          </div>
+          <button className="bg-salmon text-white text-lg font-bold px-6 py-2 rounded- hover:bg-red-600 uppercase">
+            Ver Ingresos
+          </button>
+        </div>
+
+        {/* Tarjetas de nuevos ingresos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Tarjeta 1 */}
+          <div className="bg-white p-4 shadow-md transition-transform transform hover:scale-105 relative">
+            <Image
+              src="/productos/p5.jpg"
+              width={300}
+              height={300}
+              alt="Nuevo Producto 1"
+              className="w-full h-48 md:h-64 lg:h-80 object-cover mb-2"
+            />
+            <div className="bg-green-500 text-white px-2 py-1 rounded absolute top-0 left-0">
+              Nuevo Ingreso
+            </div>
+            <h3 className="text-lg font-bold mb-2">Nuevo Producto 1</h3>
+            <p className="text-gray-600 mb-2">Marca 1</p>
+            <p className="text-lg font-bold text-blue-500 mb-2">S/. 129.99</p>
+            <button className="bg-blue-500 text-white px-4 py-2 w-full rounded hover:bg-blue-600">
+              Ver Detalles
+            </button>
+          </div>
+          {/* Tarjeta 2 */}
+          <div className="bg-white p-4 shadow-md transition-transform transform hover:scale-105 relative">
+            <Image
+              src="/productos/p6.jpg"
+              width={300}
+              height={300}
+              alt="Nuevo Producto 1"
+              className="w-full h-48 md:h-64 lg:h-80 object-cover mb-2"
+            />
+            <div className="bg-green-500 text-white px-2 py-1 rounded absolute top-0 left-0">
+              Nuevo Ingreso
+            </div>
+            <h3 className="text-lg font-bold mb-2">Nuevo Producto 1</h3>
+            <p className="text-gray-600 mb-2">Marca 1</p>
+            <p className="text-lg font-bold text-blue-500 mb-2">S/. 129.99</p>
+            <button className="bg-blue-500 text-white px-4 py-2 w-full rounded hover:bg-blue-600">
+              Ver Detalles
+            </button>
+          </div>
+          {/* Tarjeta 3 */}
+          <div className="bg-white p-4 shadow-md transition-transform transform hover:scale-105 relative">
+            <Image
+              src="/productos/p7.jpg"
+              width={300}
+              height={300}
+              alt="Nuevo Producto 1"
+              className="w-full h-48 md:h-64 lg:h-80 object-cover mb-2"
+            />
+            <div className="bg-green-500 text-white px-2 py-1 rounded absolute top-0 left-0">
+              Nuevo Ingreso
+            </div>
+            <h3 className="text-lg font-bold mb-2">Nuevo Producto 1</h3>
+            <p className="text-gray-600 mb-2">Marca 1</p>
+            <p className="text-lg font-bold text-blue-500 mb-2">S/. 129.99</p>
+            <button className="bg-blue-500 text-white px-4 py-2 w-full rounded hover:bg-blue-600">
+              Ver Detalles
+            </button>
+          </div>
+          {/* Tarjeta 4 */}
+          <div className="bg-white p-4 shadow-md transition-transform transform hover:scale-105 relative">
+            <Image
+              src="/productos/p8.jpg"
+              width={300}
+              height={300}
+              alt="Nuevo Producto 1"
+              className="w-full h-48 md:h-64 lg:h-80 object-cover mb-2"
+            />
+            <div className="bg-green-500 text-white px-2 py-1 rounded absolute top-0 left-0">
+              Nuevo Ingreso
+            </div>
+            <h3 className="text-lg font-bold mb-2">Nuevo Producto 1</h3>
+            <p className="text-gray-600 mb-2">Marca 1</p>
+            <p className="text-lg font-bold text-blue-500 mb-2">S/. 129.99</p>
+            <button className="bg-blue-500 text-white px-4 py-2 w-full rounded hover:bg-blue-600">
+              Ver Detalles
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="p-8">
+        {/* Banner de ofertas */}
+        <div className="bg-salmon text-white p-4 mb-8 flex justify-between items-center">
+          <div>
+            <h2 className="text-2xl text-white font-bold">¡Ofertas Especiales!</h2>
+            <p>Aprovecha estas increíbles ofertas por tiempo limitado.</p>
+          </div>
+          <button className="bg-mostaza text-white text-lg font-bold px-6 py-2 rounded- hover:bg-red-600 uppercase">
+            Ver Ofertas
+          </button>
+        </div>
+        {/* Tarjetas de productos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Card 1 */}
+          <div className="bg-white p-4 shadow-md transition-transform transform hover:scale-105">
+            <Image
+              src="/productos/p1.jpg"
+              width={300}
+              height={300}
+              alt="Producto 1"
+              className="w-full h-48 md:h-64 lg:h-80 object-cover mb-2"
+            />
+            <div className="bg-red-500 text-white px-2 py-1 rounded absolute top-0 left-0">
+              Oferta
+            </div>
+            <h3 className="text-lg font-bold mb-2">Producto 1</h3>
+            <p className="text-gray-600 mb-2">Marca 1</p>
+            <div className="flex mb-2">
+              <del className="text-gray-500 mr-2">S/. 129.99</del>
+              <p className="text-lg font-bold text-red-500">S/. 99.99</p>
+            </div>
+            <button className="bg-red-500 text-white px-4 py-2 w-full rounded hover:bg-red-600">
+              Ver Detalles
+            </button>
+          </div>
+          {/* Card 2 */}
+          <div className="bg-white p-4 shadow-md transition-transform transform hover:scale-105">
+            <Image
+              src="/productos/p2.jpg"
+              width={300}
+              height={300}
+              alt="Producto 1"
+              className="w-full h-48 md:h-64 lg:h-80 object-cover mb-2"
+            />
+            <div className="bg-red-500 text-white px-2 py-1 rounded absolute top-0 left-0">
+              Oferta
+            </div>
+            <h3 className="text-lg font-bold mb-2">Producto 1</h3>
+            <p className="text-gray-600 mb-2">Marca 1</p>
+            <div className="flex mb-2">
+              <del className="text-gray-500 mr-2">S/. 129.99</del>
+              <p className="text-lg font-bold text-red-500">S/. 99.99</p>
+            </div>
+            <button className="bg-red-500 text-white px-4 py-2 w-full rounded hover:bg-red-600">
+              Ver Detalles
+            </button>
+          </div>
+          {/* Card 3 */}
+          <div className="bg-white p-4 shadow-md transition-transform transform hover:scale-105">
+            <Image
+              src="/productos/p3.jpg"
+              width={300}
+              height={300}
+              alt="Producto 1"
+              className="w-full h-48 md:h-64 lg:h-80 object-cover mb-2"
+            />
+            <div className="bg-red-500 text-white px-2 py-1 rounded absolute top-0 left-0">
+              Oferta
+            </div>
+            <h3 className="text-lg font-bold mb-2">Producto 1</h3>
+            <p className="text-gray-600 mb-2">Marca 1</p>
+            <div className="flex mb-2">
+              <del className="text-gray-500 mr-2">S/. 129.99</del>
+              <p className="text-lg font-bold text-red-500">S/. 99.99</p>
+            </div>
+            <button className="bg-red-500 text-white px-4 py-2 w-full rounded hover:bg-red-600">
+              Ver Detalles
+            </button>
+          </div>
+          {/* Card 4 */}
+          <div className="bg-white p-4 shadow-md transition-transform transform hover:scale-105">
+            <Image
+              src="/productos/p4.jpg"
+              width={300}
+              height={300}
+              alt="Producto 1"
+              className="w-full h-48 md:h-64 lg:h-80 object-cover mb-2"
+            />
+            <div className="bg-red-500 text-white px-2 py-1 rounded absolute top-0 left-0">
+              Oferta
+            </div>
+            <h3 className="text-lg font-bold mb-2">Producto 1</h3>
+            <p className="text-gray-600 mb-2">Marca 1</p>
+            <div className="flex mb-2">
+              <del className="text-gray-500 mr-2">S/. 129.99</del>
+              <p className="text-lg font-bold text-red-500">S/. 99.99</p>
+            </div>
+            <button className="bg-red-500 text-white px-4 py-2 w-full rounded hover:bg-red-600">
+              Ver Detalles
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="bg-white p-6">
+        <h2 className="text-xl font-bold text-azul">¡Lleva más, paga menos con estas ofertas!</h2>
         <div className="mt-4 grid grid-cols-3 gap-4">
           <div className="w-full">
             <div>
-              <img
+              <Image
+                layout="responsive"
                 alt="Oferta 1"
                 className="w-full h-auto"
                 src="/banner-oferta-snacks.jpg"
+                width={500} // el ancho original de la imagen
+                height={300} // el alto original de la imagen
+                sizes="(min-width: 768px) 33vw, 100vw" // el tamaño de la imagen en diferentes resoluciones
                 style={{
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
               />
-              <p>Ofertas en alimentos seleccionados</p>
+              <p className="text-center pt-4 pb-6 text-azul">Ofertas en alimentos seleccionados</p>
             </div>
           </div>
           <div className="w-full">
             <div>
-              <img
+              <Image
+                layout="responsive"
                 alt="Oferta 2"
                 className="w-full h-auto"
                 src="/banner-juguetes.jpg"
+                width={500} // el ancho original de la imagen
+                height={300} // el alto original de la imagen
+                sizes="(min-width: 768px) 33vw, 100vw" // el tamaño de la imagen en diferentes resoluciones
                 style={{
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
               />
-              <p>Descuentos únicos en juguetes seleccionados</p>
+              <p className="text-center pt-4 pb-6 text-azul">Descuentos únicos en juguetes seleccionados</p>
             </div>
           </div>
           <div className="w-full">
             <div>
-              <img
+              <Image
+                layout="responsive"
                 alt="Oferta 3"
                 className="w-full h-auto"
                 src="/banner-alimento-perro-gato.jpg"
+                width={500} // el ancho original de la imagen
+                height={300} // el alto original de la imagen
+                sizes="(min-width: 768px) 33vw, 100vw" // el tamaño de la imagen en diferentes resoluciones
                 style={{
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
               />
-              <p>Combos especiales para tu mascota</p>
+              <p className="text-center pt-4 pb-6 text-azul">Combos especiales para tu mascota</p>
+            </div>
+          </div>
+        </div>
+        <div className="mt-4 grid grid-cols-2 gap-4">
+          <div className="w-full">
+            <div>
+              <Image
+                layout="responsive"
+                alt="Oferta 1"
+                className="w-full h-auto"
+                src="/banner-peluqueria.jpg"
+                width={500} // el ancho original de la imagen
+                height={300} // el alto original de la imagen
+                sizes="(min-width: 768px) 33vw, 100vw" // el tamaño de la imagen en diferentes resoluciones
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+          </div>
+          <div className="w-full">
+            <div>
+              <Image
+                layout="responsive"
+                alt="Oferta 1"
+                className="w-full h-auto"
+                src="/banner-verano-home.jpg"
+                width={500} // el ancho original de la imagen
+                height={300} // el alto original de la imagen
+                sizes="(min-width: 768px) 33vw, 100vw" // el tamaño de la imagen en diferentes resoluciones
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
             </div>
           </div>
         </div>
@@ -144,90 +346,44 @@ export default function Home() {
       <section className="bg-[#f4f4f4] p-4">
         <div className="grid grid-cols-4 gap-4">
           <div>
-            <h3 className="font-bold">Antipulgas</h3>
-            <img
+            <Image
+              src="/banner-1.jpg"
+              width={300}
+              height={300}
               alt="Producto Antipulgas"
               className="w-full h-auto"
-              height="150"
-              src="/placeholder.svg"
-              style={{
-                aspectRatio: "150/150",
-                objectFit: "cover",
-              }}
-              width="150"
             />
-            <p>Todos en antipulgas!</p>
+            <p className="text-center">Todos en antipulgas</p>
           </div>
           <div>
-            <h3 className="font-bold">Arenas y pañales</h3>
-            <img
+            <Image
               alt="Producto Arenas y pañales"
               className="w-full h-auto"
-              height="150"
-              src="/placeholder.svg"
-              style={{
-                aspectRatio: "150/150",
-                objectFit: "cover",
-              }}
-              width="150"
+              src="/banner-2.jpg"
+              width={300}
+              height={300}
             />
-            <p>Ahorra más en arenas y pañales!</p>
+            <p className="text-center">Ahorra más en arenas y pañales</p>
           </div>
           <div>
-            <h3 className="font-bold">Alimento perro</h3>
-            <img
+            <Image
               alt="Producto Alimento perro"
               className="w-full h-auto"
-              height="150"
-              src="/placeholder.svg"
-              style={{
-                aspectRatio: "150/150",
-                objectFit: "cover",
-              }}
-              width="150"
+              src="/banner-3.jpg"
+              width={300}
+              height={300}
             />
-            <p>Las mejores marcas en alimento!</p>
+            <p className="text-center">Las mejores marcas en alimento</p>
           </div>
           <div>
-            <h3 className="font-bold">Alimento gato</h3>
-            <img
+            <Image
               alt="Producto Alimento gato"
               className="w-full h-auto"
-              height="150"
-              src="/placeholder.svg"
-              style={{
-                aspectRatio: "150/150",
-                objectFit: "cover",
-              }}
-              width="150"
+              src="/banner-4.jpg"
+              width={300}
+              height={300}
             />
-            <p>Lo que necesitas al mejor de tu gato!</p>
-          </div>
-        </div>
-      </section>
-      <section className="p-4">
-        <h2 className="text-xl font-bold">Super Ofertas todos los días</h2>
-        <div className="mt-2" variant="secondary">
-          Ver ofertas
-        </div>
-        <div className="mt-4 grid grid-cols-4 gap-4">
-          <div className="w-full">
-            <div>
-              <img
-                alt="Producto 1"
-                className="w-full h-auto"
-                height="200"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "300/200",
-                  objectFit: "cover",
-                }}
-                width="300"
-              />
-              <p>Descripción del producto 1</p>
-              <p className="text-lg font-bold">S/ 59.90 - S/ 179.30</p>
-              <div>Comprar</div>
-            </div>
+            <p className="text-center">Lo que necesitas al mejor de tu gato</p>
           </div>
         </div>
       </section>

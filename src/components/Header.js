@@ -1,87 +1,56 @@
+import Image from "next/image";
 import Link from "next/link";
+
+import "./Header.css"
 
 export default function Header() {
   return (
-    <header className="flex justify-between p-4 border-b border-yellow-400 fixed w-full top-0 bg-yellow-300 z-50 h-16">
-      <div className="flex space-x-8">
-        <Link href='/' className="flex space-x-2 text-red-600">
-          <PawPrintIcon className="h-6 w-6" />
-          <h1 className="font-bold text-xl"> Mr. Sabueso</h1>
+    <header className="flex w-full p-4 justify-between items-center bg-mostaza shadow-md px-4 fixed h-[70px] top-0 z-50">
+      <div className="flex w-full h-full p-4 justify-between items-center wrapper">
+        {/* Logo de la Empresa */}
+        <Link href={"/"}>
+          <Image src="/logo.png" width={100} height={100} alt="Logo Mr. Sabueso" />
         </Link>
-        <nav className="flex space-x-4 items-center">
-          <Link className="text-m hover:underline hover:text-red-700" href="#">
-            Nuevos productos
-          </Link>
-          <Link className="text-m hover:underline hover:text-red-700" href="#">
-            Regalos
-          </Link>
-          <Link className="text-m hover:underline hover:text-red-700" href="#">
+        {/* Menú */}
+        <div className="flex mx-6 text-azul">
+          <Link href="/perros" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
             Perros
           </Link>
-          <Link className="text-m hover:underline hover:text-red-700" href="#">
+          <Link href="/gatos" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
             Gatos
           </Link>
-          <Link className="text-m hover:underline hover:text-red-700" href="#">
-            Marcas
+          <Link href="/productos" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
+            Productos
           </Link>
-          <Link className="text-m hover:underline hover:text-red-700" href="#">
+          <Link href="/ofertas" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
             Ofertas
           </Link>
-        </nav>
-      </div>
-      <div className="flex items-center space-x-4">
-        <input className="border px-2 py-1 text-sm" placeholder="Buscar producto" />
-        <Link href="#">
-          <UserIcon className="text-gray-700 hover:text-red-600" />
-        </Link>
-        <Link href="#">
-          <ShoppingBagIcon className="text-gray-700 hover:text-red-600" />
-        </Link>
+          <Link href="/marcas" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
+            Marcas
+          </Link>
+        </div>
+
+        {/* Barra de búsqueda */}
+        <div className="flex-grow mx-4 flex">
+          <input
+            type="text"
+            placeholder="Buscar productos..."
+            className="w-full p-2 border focus:outline-none focus:border-salmon"
+          />
+          <button className="p-2  border-red-900 bg-salmon text-white hover:bg-red-600">
+            <SearchIcon className="w-6 h-6" />
+          </button>
+        </div>
+        <div className="flex items-center space-x-4">
+          <Link href="#">
+            <UserIcon className="text-gray-700 hover:text-red-600" />
+          </Link>
+          <Link href="#">
+            <ShoppingCartIcon className="text-gray-700 hover:text-red-600" />
+          </Link>
+        </div>
       </div>
     </header>
-  );
-}
-
-function ShoppingBagIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-      <path d="M3 6h18" />
-      <path d="M16 10a4 4 0 0 1-8 0" />
-    </svg>
-  );
-}
-
-function PawPrintIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="11" cy="4" r="2" />
-      <circle cx="18" cy="8" r="2" />
-      <circle cx="20" cy="16" r="2" />
-      <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z" />
-    </svg>
   );
 }
 
@@ -89,7 +58,7 @@ function UserIcon(props) {
   return (
     <svg
       {...props}
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="http:www.w3.org/2000/svg"
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -101,6 +70,47 @@ function UserIcon(props) {
     >
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
       <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+function ShoppingCartIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http:www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="8" cy="21" r="1" />
+      <circle cx="19" cy="21" r="1" />
+      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+    </svg>
+  );
+}
+
+function SearchIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http:www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
     </svg>
   );
 }
