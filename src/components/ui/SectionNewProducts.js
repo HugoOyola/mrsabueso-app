@@ -1,9 +1,10 @@
-import Image from "next/image";
 import ProductCard from "../ProductCard";
 
-export default function BannerNewProducts({ products }) {
+export default function SectionNewProducts({ products }) {
   // Filtra los productos que cumplen con las condiciones
-  const newProductsToShow = products.filter(product => product.newProduct && !product.onSale);
+  const newProductsToShow = products
+  .filter(product => product.newProduct && !product.onSale)
+  .slice(0, 4);
 
   return (
     <section className="p-4 wrapper">

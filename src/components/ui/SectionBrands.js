@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Brands() {
+export default function SectionBrands() {
   const imageBrands = [
     {
       brand: "/brands/logo-bravery.jpg",

@@ -11,7 +11,8 @@ export default function Footer(){
         <Link href={'/'}>
           <Image src="/logo-blanco.png" alt="Logo" className="mb-4 w-[200px]" width={200} height={200}/>
         </Link>
-        <p className="text-sm">Descripción breve de la empresa.</p>
+        <p className="text-sm">En nuestra tienda online tenemos todo lo que tu mascota necesita: comida, accesorios, juguetes y ropa de calidad. Disfruta de envío rápido, precios bajos y atención al cliente. Visítanos y sorpréndete con nuestra variedad de productos.
+</p>
       </div>
 
       {/* Acerca de Mr. Sabueso */}

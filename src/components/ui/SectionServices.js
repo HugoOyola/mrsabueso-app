@@ -1,4 +1,4 @@
-export default function BannerServicios() {
+export default function SectionServices() {
   return (
     <section className="bg-salmon text-white">
       <div className="flex w-full p-4 justify-between items-center h-26 wrapper">
