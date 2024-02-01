@@ -17,3 +17,14 @@
   transform: scaleX(1);
   background-color: #ef4444; /* Color de la línea al pasar el cursor */
 }
+
+.icon-container {
+  position: relative;
+  width: 50px;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+}

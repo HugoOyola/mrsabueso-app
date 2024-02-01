@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .wrapper {
-  max-width: 1400px;
+  max-width: 1290px;
   margin: 0 auto;
 }
 
