@@ -44,7 +44,7 @@ export default function Footer() {
       </div>
     </div>
     <div className="mt-8 border-t border-gray-700 pt-8 text-center text-gray-400">
-      &copy; 2024 Mi Ecommerce. Todos los derechos reservados.
+      &copy; 2024 Mr Sabueso - Todos los derechos reservados.
     </div>
   </footer>
   );
