@@ -1,34 +1,12 @@
 "use client";
 // Importa useState y useEffect desde React
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 import ProductFilter from "./ProductFilter";
 
 const ProductList = ({ products }) => {
   const [filteredProducts, setFilteredProducts] = useState(() => products);
   const [sortBy, setSortBy] = useState("default");
-
-  // Utiliza useEffect para ordenar los productos cuando cambia el sortBy
-  useEffect(() => {
-    let sortedProducts = [...filteredProducts];
-
-    // Realiza la clasificación según la opción seleccionada
-    if (sortBy === "priceAsc") {
-      sortedProducts.sort((a, b) => a.price - b.price);
-    } else if (sortBy === "priceDesc") {
-      sortedProducts.sort((a, b) => b.price - a.price);
-    } else if (sortBy === "nameAsc") {
-      sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortBy === "nameDesc") {
-      sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
-    } else if (sortBy === "brandAsc") {
-      sortedProducts.sort((a, b) => a.brand.localeCompare(b.brand));
-    } else if (sortBy === "brandDesc") {
-      sortedProducts.sort((a, b) => b.brand.localeCompare(a.brand));
-    }
-
-    setFilteredProducts(sortedProducts);
-  }, [sortBy, filteredProducts]);
 
   const handleFilterChange = (filter) => {
     let filtered = products;
@@ -50,8 +28,26 @@ const ProductList = ({ products }) => {
     setFilteredProducts(filtered);
   };
 
-  // Agrega un manejador para cambiar la opción de orden
+  // Modifica la opción de orden directamente en la función del evento
   const handleSortChange = (event) => {
+    let sortedProducts = [...filteredProducts];
+
+    // Realiza la clasificación según la opción seleccionada
+    if (event.target.value === "priceAsc") {
+      sortedProducts.sort((a, b) => a.price - b.price);
+    } else if (event.target.value === "priceDesc") {
+      sortedProducts.sort((a, b) => b.price - a.price);
+    } else if (event.target.value === "nameAsc") {
+      sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (event.target.value === "nameDesc") {
+      sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+    } else if (event.target.value === "brandAsc") {
+      sortedProducts.sort((a, b) => a.brand.localeCompare(b.brand));
+    } else if (event.target.value === "brandDesc") {
+      sortedProducts.sort((a, b) => b.brand.localeCompare(a.brand));
+    }
+
+    setFilteredProducts(sortedProducts);
     setSortBy(event.target.value);
   };
 
