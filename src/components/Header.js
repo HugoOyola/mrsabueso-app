@@ -1,9 +1,41 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import "./Header.css"
 
+const links = [
+  {
+    href: "/",
+    label: "Inicio",
+  },
+  {
+    href: "/perros",
+    label: "Perros",
+  },
+  {
+    href: "/gatos",
+    label: "Gatos",
+  },
+  {
+    href: "/productos",
+    label: "Productos",
+  },
+  {
+    href: "/ofertas",
+    label: "Ofertas",
+  },
+  {
+    href: "/marcas",
+    label: "Marcas",
+  }
+]
+
 export default function Header() {
+
+  const pathname = usePathname();
+
   return (
     <header className="flex w-full p-4 justify-between items-center bg-mostaza shadow-md px-4 fixed h-[70px] top-0 z-50">
       <div className="flex w-full p-4 justify-between items-center wrapper">
@@ -12,26 +44,20 @@ export default function Header() {
           <Image src="/logo.png" width={100} height={100} alt="Logo Mr. Sabueso" />
         </Link>
         {/* Menú */}
-        <div className="flex mx-6 text-azul">
-          <Link href="/perros" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
-            Perros
-          </Link>
-          <Link href="/gatos" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
-            Gatos
-          </Link>
-          <Link href="/productos" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
-            Productos
-          </Link>
-          {/* <Link href="/ofertas" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
-            Ofertas
-          </Link> */}
-          <Link href="/marcas" className="ml-2 mr-4 uppercase font-semibold hover:text-salmon relative group">
-            Marcas
-          </Link>
-        </div>
+        <nav className="flex mx-6 text-azul">
+          {
+            links.map(link =>{
+              return (
+                <Link href={link.href} key={link.href} className={`${pathname === link.href ? 'text-salmon font-bold' : ''} ml-2 mr-4 uppercase hover:text-salmon relative group`}>
+                  {link.label}
+                </Link>
+              )
+            })
+          }
+        </nav>
 
         {/* Barra de búsqueda */}
-        <div className="flex-grow mx-4 flex">
+        <form className="flex-grow mx-4 flex">
           <input
             type="text"
             placeholder="Buscar productos..."
@@ -40,7 +66,7 @@ export default function Header() {
           <button className="p-2  border-red-900 bg-salmon text-white hover:bg-red-600">
             <SearchIcon className="w-6 h-6" />
           </button>
-        </div>
+        </form>
         <div className="flex items-center space-x-4">
           <Link href="#">
             <UserIcon className="text-gray-700 hover:text-red-600" />
