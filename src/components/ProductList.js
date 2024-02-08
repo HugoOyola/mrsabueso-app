@@ -2,14 +2,20 @@
 // Importa useState y useEffect desde React
 import React, { useState } from "react";
 import ProductCard from "./ProductCard";
+import ProductGrid from "./ProductGrid";
 import ProductFilter from "./ProductFilter";
+import { productList } from "@/data/products"; // Importar los datos del archivo products.js
 
-const ProductList = ({ products }) => {
-  const [filteredProducts, setFilteredProducts] = useState(() => products);
+const ProductList = () => {
+  const [filteredProducts, setFilteredProducts] = useState(() => productList);
   const [sortBy, setSortBy] = useState("default");
 
+  // Obtener una lista única de marcas y categorías
+  const brands = [...new Set(productList.map((product) => product.brand))];
+  const categories = [...new Set(productList.map((product) => product.category))];
+
   const handleFilterChange = (filter) => {
-    let filtered = products;
+    let filtered = productList;
 
     if (filter.brand) {
       filtered = filtered.filter((product) => product.brand === filter.brand);
@@ -28,11 +34,9 @@ const ProductList = ({ products }) => {
     setFilteredProducts(filtered);
   };
 
-  // Modifica la opción de orden directamente en la función del evento
   const handleSortChange = (event) => {
     let sortedProducts = [...filteredProducts];
 
-    // Realiza la clasificación según la opción seleccionada
     if (event.target.value === "priceAsc") {
       sortedProducts.sort((a, b) => a.price - b.price);
     } else if (event.target.value === "priceDesc") {
@@ -54,8 +58,12 @@ const ProductList = ({ products }) => {
   return (
     <div className="flex flex-col">
       <div className="flex justify-end px-4">
-        {/* Agrega el combo para ordenar */}
-        <label htmlFor="sortBy" className="pr-4">Ordenar por:</label>
+        {/* <div>
+          <span className="text-center text-gray-600"><strong>Total: </strong>{productList.length} productos</span>
+        </div> */}
+        <label htmlFor="sortBy" className="pr-4">
+          Ordenar por:
+        </label>
         <select id="sortBy" value={sortBy} onChange={handleSortChange} className="border rounded">
           <option value="default">Por defecto</option>
           <option value="priceAsc">Precio (Menor a Mayor)</option>
@@ -70,16 +78,12 @@ const ProductList = ({ products }) => {
         <div className="w-1/3 p-4 mx-auto">
           <ProductFilter
             onFilterChange={handleFilterChange}
-            brands={["Canbo", "Canbo Balance", "Cat Chow", "Pedigree", "Whiskas", "Royal Canin", "Otras"]}
-            categories={["Alimentos", "Salud e Higiene", "Accesorios", "Juguetes", "Collares"]}
+            brands={brands} // Pasar la lista única de marcas como propiedades
+            categories={categories} // Pasar la lista única de categorías como propiedades
           />
         </div>
         <div className="w-3/4 p-4">
-          <div className="grid grid-cols-3 gap-4">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.name} product={product} />
-            ))}
-          </div>
+          <ProductGrid products={filteredProducts} />
         </div>
       </div>
     </div>

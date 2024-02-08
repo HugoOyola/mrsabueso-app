@@ -1,5 +1,11 @@
-import {NextResponse} from 'next/server'
+import { NextResponse } from "next/server";
+import { productList } from "@/data/products";
+
+const sleep = (timer) => {
+  return new Promise((resolve) => setTimeout(resolve, timer));
+};
 
 export async function GET() {
-  return NextResponse.json("Mensaje de Prueba")
+  await sleep(1000);
+  return NextResponse.json(productList);
 }

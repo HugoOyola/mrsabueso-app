@@ -1,92 +1,81 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 const ProductFilter = ({ onFilterChange, brands, categories }) => {
-  const [filter, setFilter] = useState({
-    selectedBrands: [], // Cambiado a un array para manejar selección múltiple
-    category: '',
-    productType: 'all', // 'all', 'onSale', 'new'
+  const [selectedFilters, setSelectedFilters] = useState({
+    brand: "",
+    category: "",
+    productType: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFilter({ ...filter, [name]: value });
+  const handleBrandChange = (event) => {
+    setSelectedFilters({ ...selectedFilters, brand: event.target.value });
   };
 
-  const handleBrandChange = (brand) => {
-    const isSelected = filter.selectedBrands.includes(brand);
-    const selectedBrands = isSelected
-      ? filter.selectedBrands.filter((selectedBrand) => selectedBrand !== brand)
-      : [...filter.selectedBrands, brand];
+  const handleCategoryChange = (event) => {
+    setSelectedFilters({ ...selectedFilters, category: event.target.value });
+  };
 
-    setFilter({ ...filter, selectedBrands });
+  const handleProductTypeChange = (event) => {
+    setSelectedFilters({ ...selectedFilters, productType: event.target.value });
   };
 
   const handleFilter = () => {
-    onFilterChange(filter);
+    onFilterChange(selectedFilters);
+  };
+
+  const handleReset = () => {
+    setSelectedFilters({
+      brand: "",
+      category: "",
+      productType: "",
+    });
+    onFilterChange({});
   };
 
   return (
     <div className="bg-gray-200 p-4 rounded">
       <h2 className="text-xl font-bold mb-4">Filtrar Productos</h2>
-
       <ul className="space-y-2">
-        <li>
-          <label className="block text-sm font-medium text-gray-700">Categoría:</label>
-          <select
-            name="category"
-            value={filter.category}
-            onChange={handleChange}
-            className="w-full border p-2 rounded focus:outline-none focus:border-blue-500"
-          >
-            <option value="">Todas</option>
-            {categories.map((category, index) => (
-              <option key={index} value={category}>
+        <li className="pb-2">
+          <label className="block text-sm font-medium text-gray-700 pb-1">Marca:</label>
+          <select value={selectedFilters.brand} onChange={handleBrandChange} className="w-full border border-gray-400 rounded">
+            <option value="">Seleccione una marca</option>
+            {brands.map((brand) => (
+              <option key={brand} value={brand}>
+                {brand}
+              </option>
+            ))}
+          </select>
+        </li>
+        <li className="pb-2">
+          <label className="block text-sm font-medium text-gray-700 pb-1">Categoría:</label>
+          <select value={selectedFilters.category} onChange={handleCategoryChange} className="w-full border border-gray-400 rounded">
+            <option value="">Seleccione una categoría</option>
+            {categories.map((category) => (
+              <option key={category} value={category}>
                 {category}
               </option>
             ))}
           </select>
         </li>
-
-        <li>
-          <label className="block text-sm font-medium text-gray-700">Tipo de Producto:</label>
-          <select
-            name="productType"
-            value={filter.productType}
-            onChange={handleChange}
-            className="w-full border p-2 rounded focus:outline-none focus:border-blue-500"
-          >
-            <option value="all">Todos</option>
-            <option value="onSale">Oferta</option>
+        <li className="pb-2">
+          <label className="block text-sm font-medium text-gray-700 pb-1">Tipo de Producto:</label>
+          <select value={selectedFilters.productType} onChange={handleProductTypeChange} className="w-full border border-gray-400 rounded">
+            <option value="">Seleccione un tipo de producto</option>
+            <option value="onSale">En oferta</option>
             <option value="new">Nuevo</option>
           </select>
         </li>
-        <li>
-          <label className="block text-sm font-medium text-gray-700">Marcas:</label>
-          <div className="overflow-y-auto max-h-40 bg-white py-2 px-4 rounded-md">
-            {brands.map((brand, index) => (
-              <div key={index} className="flex items-center">
-                <input
-                  type="checkbox"
-                  id={brand}
-                  name={brand}
-                  checked={filter.selectedBrands.includes(brand)}
-                  onChange={() => handleBrandChange(brand)}
-                  className="mr-2"
-                />
-                <label htmlFor={brand}>{brand}</label>
-              </div>
-            ))}
-          </div>
-        </li>
       </ul>
-
-      <button
-        onClick={handleFilter}
-        className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
-      >
-        Filtrar
-      </button>
+      <div>
+        <button onClick={handleFilter} className="mt-2 mr-2 border rounded px-4 py-2 bg-salmon text-white hover:bg-red-600">
+          Filtrar
+        </button>
+        <button onClick={handleReset} className="mt-2 border rounded px-4 py-2 bg-azul text-white hover:bg-gray-400">
+          Restablecer
+        </button>
+      </div>
     </div>
   );
 };

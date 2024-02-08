@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="max-w-sm rounded overflow-hidden border transition duration-300 transform hover:shadow-lg relative">
       <div className="relative">
-        <Image className="w-full pt-2" src={product.image} alt={product.name} width="300" height="300" />
+        <Image className="w-full pt-2" src={`/productos/${product.image}`} alt={product.name} width="300" height="300" />
         {/* Badge para indicar si el producto está en oferta */}
         {product.onSale && <span className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">Oferta</span>}
         {/* Badge para indicar si el producto es nuevo */}
@@ -32,7 +32,12 @@ export default function ProductCard({ product }) {
           </div>
         )}
         <div className="mt-4">
-          <button className="w-full bg-salmon hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Comprar</button>
+          {/* <button className="w-full bg-salmon hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Comprar</button> */}
+          <Link href='/productos/[slug]' as={`/products/${product.slug}`}>
+            <button className={`w-full bg-salmon hover:bg-red-700 text-white font-bold py-2 px-4 rounded`}>
+              COMPRAR
+            </button>
+          </Link>
         </div>
       </div>
     </div>

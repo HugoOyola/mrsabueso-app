@@ -1,6 +1,10 @@
 import ProductCard from "./ProductCard";
 
-export default function ProductGrid({ products }) {
+export default async function ProductGrid({ products }) {
+  const data = await fetch("http://localhost:3000/api/productos",{cache: "no-store"})
+  .then((response) => response.json());
+  console.log(data);
+
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
