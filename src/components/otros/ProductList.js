@@ -1,8 +1,8 @@
 "use client";
 // Importa useState y useEffect desde React
 import React, { useState } from "react";
-import ProductCard from "./ProductCard";
-import ProductGrid from "./ProductGrid";
+import ProductCard from "../ProductCard";
+import ProductGrid from "../ProductGrid";
 import ProductFilter from "./ProductFilter";
 import { productList } from "@/data/products"; // Importar los datos del archivo products.js
 
