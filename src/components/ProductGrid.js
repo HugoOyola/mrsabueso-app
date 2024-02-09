@@ -1,9 +1,19 @@
 import ProductCard from "./ProductCard";
 
-export default async function ProductGrid({ products }) {
-  const data = await fetch("http://localhost:3000/api/productos",{cache: "no-store"})
-  .then((response) => response.json());
-  console.log(data);
+const getProducts = async () => {
+  const response = await fetch("http://localhost:3000/api/productos", { cache: "no-store",
+  next:{
+    revalidate: 36000,
+  }});
+
+  if (!response.ok) {
+    throw new Error("Fallo la obtencioón de productos");
+  }
+  return response.json();
+};
+
+const ProductGrid = async () => {
+  const products = await getProducts();
 
   return (
     <div>
@@ -12,11 +22,11 @@ export default async function ProductGrid({ products }) {
           <ProductCard key={index} product={product} />
         ))}
       </div>
-      <div className="text-center mt-8">
-        <button className="bg-verde hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
-          Más Resultados
-        </button>
-      </div>
+      {/* <div className="text-center mt-8">
+        <button className="bg-verde hover:bg-green-500 text-white font-bold py-2 px-4 rounded">Más Resultados</button>
+      </div> */}
     </div>
   );
-}
+};
+
+export default ProductGrid;
