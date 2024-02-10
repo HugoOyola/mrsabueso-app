@@ -1,6 +1,9 @@
 import Image from "next/image";
 
-export default function OfertasSection({ promociones }) {
+const OfertasSection = async ({promociones}) => {
+  const response = await fetch(`http://localhost:3000/api/inicio`, { cache: "force-cache" }).then((r) => r.json());
+  console.log(response);
+
   return (
     <section className="bg-white p-4 wrapper">
       <h2 className="text-xl font-bold text-azul">¡Lleva más, paga menos con estas ofertas!</h2>
@@ -24,3 +27,5 @@ export default function OfertasSection({ promociones }) {
     </section>
   );
 }
+
+export default OfertasSection;

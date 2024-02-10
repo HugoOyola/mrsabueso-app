@@ -1,4 +1,6 @@
 import { productList } from "@/data/products"
+import { promociones } from "@/data/promociones"
+import { promociones2 } from "@/data/promociones2"
 
 import Carousel from "@/components/Carousel";
 import SectionServices from "@/components/sectionHome/SectionServices";
@@ -9,21 +11,6 @@ import SectionPromo from "@/components/sectionHome/SectionPromo";
 import SectionPromo2 from "@/components/sectionHome/SectionPromo2";
 
 export default function Home() {
-  const promociones = [
-    { imagen: '/banner-oferta-snacks.jpg', descripcion: 'Ofertas en alimentos seleccionados' },
-    { imagen: '/banner-juguetes.jpg', descripcion: 'Descuentos únicos en juguetes seleccionados' },
-    { imagen: '/banner-alimento-perro-gato.jpg', descripcion: 'Combos especiales para tu mascota' },
-    // Agrega más ofertas según sea necesario
-  ];
-
-  const promociones2 = [
-    { imagen: '/banner-1.jpg', descripcion: 'Todos en antipulgas' },
-    { imagen: '/banner-2.jpg', descripcion: 'Ahorra más en arenas y pañales' },
-    { imagen: '/banner-3.jpg', descripcion: 'Las mejores marcas en alimento perro' },
-    { imagen: '/banner-4.jpg', descripcion: 'Lo que necesitas al mejor precio para tu gato' },
-    // Agrega más promociones según sea necesario
-  ];
-
   return (
     <main>
       <div className="h-[70px]"></div>
