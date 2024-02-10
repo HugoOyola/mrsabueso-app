@@ -1,4 +1,4 @@
-import ProductDetails from "@/components/ProductDetails";
+import ProductDetails from "@/components/uiProducts/ProductDetails";
 
 const DetailPage = ({ params }) => {
   const { slug } = params;

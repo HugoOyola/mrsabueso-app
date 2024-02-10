@@ -19,7 +19,7 @@ const links = [
     label: "Gatos",
   },
   {
-    href: "/productos",
+    href: "/productos/todos",
     label: "Productos",
   },
   {

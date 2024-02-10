@@ -1,7 +1,7 @@
 // import { productList } from "@/data/products";
 // import ProductGrid from "@/components/ProductGrid";
 // import ProductList from "@/components/ProductList";
-import ProductCategory from "@/components/ProductCategory";
+import ProductCategory from "@/components/uiProducts/ProductCategory";
 import CategoryMenu from "@/components/CategoryMenu";
 import { Suspense } from "react";
 

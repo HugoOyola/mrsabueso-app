@@ -1,4 +1,4 @@
-import ProductCard from "../ProductCard";
+import ProductCard from "../uiProducts/ProductCard";
 
 export default function SectionNewProducts({ products }) {
   // Filtra los productos que cumplen con las condiciones

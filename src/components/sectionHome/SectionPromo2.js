@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 
 const PromocionesSection2 = ({ promociones2 }) => {

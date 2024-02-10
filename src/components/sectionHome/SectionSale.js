@@ -1,4 +1,4 @@
-import ProductCard from "../ProductCard";
+import ProductCard from "../uiProducts/ProductCard";
 
 export default function SectionSale({ products }) {
   const newProductsToShow = products.filter((product) => product.onSale && !product.newProduct).slice(0, 4);

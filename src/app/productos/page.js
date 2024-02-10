@@ -1,5 +1,5 @@
 import { productList } from "@/data/products";
-import ProductList from "@/components/ProductList";
+import ProductList from "@/components/uiProducts/ProductList";
 import CategoryMenu from "@/components/CategoryMenu";
 
 export default function AllProducts() {

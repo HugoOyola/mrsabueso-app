@@ -1,12 +1,12 @@
 import { productList } from "@/data/products"
 
 import Carousel from "@/components/Carousel";
-import SectionServices from "@/components/ui/SectionServices";
-import SectionBrands from "@/components/ui/SectionBrands";
-import SectionNewProducts from "@/components/ui/SectionNewProducts";
-import SectionSale from "@/components/ui/SectionSale";
-import SectionPromo from "@/components/ui/SectionPromo";
-import SectionPromo2 from "@/components/ui/SectionPromo2";
+import SectionServices from "@/components/sectionHome/SectionServices";
+import SectionBrands from "@/components/sectionHome/SectionBrands";
+import SectionNewProducts from "@/components/sectionHome/SectionNewProducts";
+import SectionSale from "@/components/sectionHome/SectionSale";
+import SectionPromo from "@/components/sectionHome/SectionPromo";
+import SectionPromo2 from "@/components/sectionHome/SectionPromo2";
 
 export default function Home() {
   const promociones = [

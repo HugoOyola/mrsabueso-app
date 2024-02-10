@@ -1,4 +1,4 @@
-import ProductCard from "./ProductCard";
+import ProductCard from "../uiProducts/ProductCard";
 
 const ProductList = async ({ category }) => {
   const products = await fetch(`http://localhost:3000/api/productos/${category}`, { cache: "force-cache" }).then((r) => r.json());

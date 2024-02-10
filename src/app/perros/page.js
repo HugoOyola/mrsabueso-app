@@ -3,7 +3,7 @@ import { productList } from "@/data/products";
 import Image from "next/image";
 import Link from "next/link";
 
-import ProductList from "@/components/ProductList";
+import ProductList from "@/components/uiProducts/ProductList";
 
 export default function DogPage() {
   const dogProductsToShow = productList.filter((product) => product.petType === "perro");

@@ -1,6 +1,6 @@
 import { productList } from "@/data/products";
 import Image from "next/image";
-import SectionNewProducts from "./ui/SectionNewProducts";
+import SectionNewProducts from "../sectionHome/SectionNewProducts";
 
 const ProductDetails = ({ slug }) => {
 

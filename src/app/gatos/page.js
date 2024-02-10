@@ -3,7 +3,7 @@ import { productList } from "@/data/products";
 import Image from "next/image";
 import Link from "next/link";
 
-import ProductGrid from "@/components/ProductList";
+import ProductGrid from "@/components/uiProducts/ProductList";
 
 export default function CatPage() {
   const catProductsToShow = productList.filter((product) => product.petType === "gato");
