@@ -1,5 +1,5 @@
 import { productList } from "@/data/products";
-import ProductGrid from "@/components/ProductGrid";
+import ProductList from "@/components/ProductList";
 import CategoryMenu from "@/components/CategoryMenu";
 
 export default function AllProducts() {
@@ -15,7 +15,7 @@ export default function AllProducts() {
             <CategoryMenu />
           </div>
           <div className="w-3/4 p-4">
-            <ProductGrid products={productList} />
+            <ProductList products={productList} />
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { productList } from "@/data/products";
 import Image from "next/image";
 import Link from "next/link";
 
-import ProductGrid from "@/components/ProductGrid";
+import ProductList from "@/components/ProductList";
 
 export default function DogPage() {
   const dogProductsToShow = productList.filter((product) => product.petType === "perro");
@@ -37,7 +37,7 @@ export default function DogPage() {
         </div>
         <div className="mt-4 text-end text-gray-600"><strong>Total de productos: </strong>{dogProductsToShow.length}</div>
         <div className="p-4">
-          <ProductGrid products={dogProductsToShow} />
+          <ProductList products={dogProductsToShow} />
         </div>
       </div>
     </div>
