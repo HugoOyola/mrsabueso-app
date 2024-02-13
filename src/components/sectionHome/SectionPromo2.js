@@ -1,13 +1,16 @@
 import Image from 'next/image';
 
-const PromocionesSection2 = ({ promociones2 }) => {
+const PromocionesSection2 = async ({ promociones2 }) => {
+  const promo2 = await fetch(`http://localhost:3000/api/inicio/promociones2`, { cache: "force-cache" }).then( r => r.json());
+  // console.log(promo1);
+
   return (
     <section className="bg-[#f4f4f4]">
       <div className="grid grid-cols-4 p-4 gap-4 wrapper">
-        {promociones2.map((promocion, index) => (
+        {promo2.map((promocion, index) => (
           <div key={index}>
             <Image
-              src={promocion.imagen}
+              src={`/${promocion.imagen}`}
               width={300}
               height={300}
               alt={`Promoción ${index + 1}`}

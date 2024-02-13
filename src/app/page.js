@@ -1,6 +1,6 @@
 import { productList } from "@/data/products"
-import { promociones } from "@/data/promociones"
-import { promociones2 } from "@/data/promociones2"
+// import { promociones } from "@/data/promociones"
+// import { promociones2 } from "@/data/promociones2"
 
 import Carousel from "@/components/Carousel";
 import SectionServices from "@/components/sectionHome/SectionServices";
@@ -22,8 +22,8 @@ export default function Home() {
       <SectionBrands />
       <SectionNewProducts products={productList}  />
       <SectionSale products={productList} />
-      <SectionPromo promociones={promociones} />
-      <SectionPromo2 promociones2={promociones2} />
+      <SectionPromo />
+      <SectionPromo2 />
     </main>
   );
 }
