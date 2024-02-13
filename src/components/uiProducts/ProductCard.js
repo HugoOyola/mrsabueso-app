@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
         {/* Muestra el precio con descuento si el producto está en oferta */}
         {product.onSale && (
           <div className="flex items-center">
-            <p className="text-green-500 font-semibold text-2xl mt-2">S. /{discountedPrice}</p>
+            <p className="text-green-500 font-semibold text-2xl mt-2">S./ {discountedPrice}</p>
             <p className="text-gray-400 line-through text-sm ml-2">S/. {product.price}</p>
           </div>
         )}
