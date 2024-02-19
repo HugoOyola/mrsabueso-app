@@ -1,7 +1,7 @@
 // import { productList } from "@/data/products";
 // import ProductGrid from "@/components/ProductGrid";
 // import ProductList from "@/components/ProductList";
-import ProductCategory from "@/components/uiProducts/ProductCategory";
+import ProductList from "@/components/uiProducts/ProductList";
 import CategoryMenu from "@/components/CategoryMenu";
 import { Suspense } from "react";
 
@@ -29,7 +29,7 @@ export default function AllProducts({ params }) {
           </div>
           <div className="w-3/4 p-4">
             <Suspense fallback={<div>Loading...</div>}>
-              <ProductCategory category={category} />
+              <ProductList category={category} />
             </Suspense>
           </div>
         </div>
