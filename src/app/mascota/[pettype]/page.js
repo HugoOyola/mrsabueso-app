@@ -1,38 +1,25 @@
-import ProductPet from "@/components/uiProducts/ProductPet";
-import { Suspense } from "react";
+import Image from "next/image";
+import PetCategory from "@/components/uiPetType/PetCategory";
+import PetProducts from "@/components/uiPetType/PetProducts";
 
-// Esta función capitaliza la primera letra de una cadena
-function capitalize (string) {
-  return string.charAt (0).toUpperCase () + string.slice (1);
-}
-
-// Esta función usa el parámetro pettype y lo capitaliza
 export async function generateMetadata({ params, searchParams }, parent) {
   return {
-    title: `Mr. Sabueso - ${capitalize (params.pettype)}`,
-    description: `Productos para ${capitalize (params.pettype)}`,
+    title: `Mr. Sabueso - Todo para tu ${params.petType}`,
+    description: `Productos de la categoría ${params.petType}`,
   };
 }
 
-
-export default function AllProducts({ params }) {
-  const { pettype } = params;
+export default function DogPage({params}) {
+  const { petType } = params;
+  // const dogProductsToShow = productList.filter((product) => product.petType === "perro");
 
   return (
     <div className="bg-white">
       <div className="h-[70px]"></div>
-      <div className="py-4 wrapper">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold capitalize p-4">Tipo de Mascota: {pettype}</h1>
-        </div>
-        {/* Pasar los productos filtrados al componente ProductGrid */}
-        <div className="flex">
-          <div className="w-3/4 p-4">
-            <Suspense fallback={<div>Loading...</div>}>
-              <ProductPet pettype={pettype} />
-            </Suspense>
-          </div>
-        </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Image src="/category/hero-dog.jpg" alt="Hero Dog" width={1100} height={100} className="w-full h-25 mb-2 mt-6" />
+        <PetCategory />
+        <PetProducts petType={petType} />
       </div>
     </div>
   );

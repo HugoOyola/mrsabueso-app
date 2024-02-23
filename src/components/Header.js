@@ -13,12 +13,12 @@ const links = [
     label: "Inicio",
   },
   {
-    href: "/perros",
-    label: "Perros",
+    href: "/mascota/perro",
+    label: "Perro",
   },
   {
-    href: "/gatos",
-    label: "Gatos",
+    href: "/mascota/gato",
+    label: "Gato",
   },
   {
     href: "/productos/todos",

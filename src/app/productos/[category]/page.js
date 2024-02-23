@@ -5,10 +5,15 @@ import ProductList from "@/components/uiProducts/ProductList";
 import CategoryMenu from "@/components/CategoryMenu";
 import { Suspense } from "react";
 
+// Esta función capitaliza la primera letra de una cadena
+function capitalize (string) {
+  return string.charAt (0).toUpperCase () + string.slice (1);
+}
+
 export async function generateMetadata({ params, searchParams }, parent) {
   return {
-    title: `Mr. Sabueso - Categoria ${params.category}`,
-    description: `Productos de la categoría ${params.category}`,
+    title: `Mr. Sabueso - Categoria ${capitalize (params.category)}`,
+    description: `Productos de la categoría ${capitalize (params.category)}`,
   };
 }
 
