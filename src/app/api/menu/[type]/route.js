@@ -3,11 +3,11 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/firebase/config";
 
 export async function GET(_, { params }) {
-  const { petType } = params;
-  const productsRef = collection(db, "productos");
-  const q = petType === "perro" || petType === "gato"
-    ? query(productsRef, where("petType", "==", petType))
-    : productsRef;
+  const { type } = params;
+  const productsRef = collection(db, "pet-menu");
+
+  // Filtramos por el tipo de mascota (perro o gato)
+  const q = query(productsRef, where("type", "==", type));
 
   const querySnapshot = await getDocs(q);
 

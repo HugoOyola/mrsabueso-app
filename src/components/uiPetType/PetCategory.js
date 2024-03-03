@@ -1,11 +1,14 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const PetCetgory = () => {
   return (
   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 py-6">
     <div className="flex flex-col items-center text-center">
-      <Image src="/category/perro-alimento.jpg" height="100" width="120" alt="Alimento" className="w-17 h-17 object-cover rounded-full" />
-      <h3 className="text-lg font-semibold mt-4">Alimento</h3>
+      <Link href="#">
+        <Image src={`/category/${params.petType}-alimento.jpg`} height="100" width="120" alt="Alimento" className="w-17 h-17 object-cover rounded-full" />
+        <h3 className="text-lg font-semibold mt-4">Alimento</h3>
+      </Link>
     </div>
     <div className="flex flex-col items-center text-center">
       <Image src="/category/perro-farmacia.jpg" height="100" width="120" alt="Salud e Higiene" className="w-17 h-17 object-cover rounded-full" />
