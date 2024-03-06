@@ -5,16 +5,16 @@ import PetProducts from "@/components/uiPetType/PetProducts";
 import PetCategory from "@/components/uiPetType/PetMenu";
 
 // Esta función capitaliza la primera letra de una cadena
-function capitalize(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+// function capitalize(string) {
+//   return string.charAt(0).toUpperCase() + string.slice(1);
+// }
 
-export async function generateMetadata({ params, searchParams }, parent) {
-  return {
-    title: `Mr. Sabueso - ${capitalize(params.petType)}`,
-    description: `Productos para tu ${capitalize(params.petType)}`,
-  };
-}
+// export async function generateMetadata({ params, searchParams }, parent) {
+//   return {
+//     title: `Mr. Sabueso - ${capitalize(params.petType)}`,
+//     description: `Productos para tu ${capitalize(params.petType)}`,
+//   };
+// }
 
 export default function PetPageCategory({ params }) {
   const { petType } = params;
