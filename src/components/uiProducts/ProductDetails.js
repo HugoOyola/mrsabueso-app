@@ -1,15 +1,23 @@
 import { productList } from "@/data/products";
 import Image from "next/image";
 import SectionNewProducts from "../sectionHome/SectionNewProducts";
+import Breadcrumb from "../Breadcrumb";
 
 const ProductDetails = ({ slug }) => {
-
   const products = productList.find((p) => p.slug === slug);
   const discountedPrice = (parseFloat(products.price) * 0.8).toFixed(2);
 
   return (
     <div className="bg-white wrapper">
       <div className="h-[70px]"></div>
+      {/* <Breadcrumb
+        homeElement={"Inicio"}
+        separator={<span> | </span>}
+        activeClasses="text-amber-500"
+        containerClasses="flex pl-10 py-5 bg-gradient-to-r from-blue-600 to-blue-600 text-white"
+        listClasses="hover:underline mx-2 font-bold"
+        capitalizeLinks
+      /> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 py-6">
           <Image alt="Product Image" className="w-full h-auto object-cover rounded-lg" height="500" src={`/productos/${products.image}`} width="500" />
@@ -28,7 +36,7 @@ const ProductDetails = ({ slug }) => {
 
       <div className="border-t-2">
         {/* <h2 className="text-2xl font-semibold mb-4 p-4">Productos Relacionados</h2> */}
-        <SectionNewProducts products={productList}  />
+        <SectionNewProducts products={productList} />
       </div>
     </div>
   );
