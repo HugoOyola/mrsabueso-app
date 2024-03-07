@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { usePathname } from "next/navigation";
-import { SearchIcon, UserIcon, ShoppingCartIcon } from './IconComponents';
+import { SearchIcon, UserIcon } from './IconComponents';
+import CartWidget from "./CartWidget";
 
 import "./Header.css"
 
@@ -73,15 +74,7 @@ export default function Header() {
           <Link href="#">
             <UserIcon className="text-gray-700 hover:text-red-600" />
           </Link>
-          <Link href="/carrito">
-            <div className="icon-container">
-              <ShoppingCartIcon className="text-gray-700 hover:text-red-600" />
-              <span className="sr-only">Shopping cart</span>
-              <span className="text-sm font-bold bg-red-500 text-white rounded-full h-6 w-6 flex items-center justify-center badge">
-                2
-              </span>
-            </div>
-          </Link>
+          <CartWidget />
         </div>
       </div>
     </header>
