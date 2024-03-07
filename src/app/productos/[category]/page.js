@@ -17,6 +17,17 @@ export async function generateMetadata({ params, searchParams }, parent) {
   };
 }
 
+export function generateStaticParmas() {
+  return [
+    { params: { categoria: "todos" } },
+    { params: { categoria: "accesorios" } },
+    { params: { categoria: "alimentos" } },
+    { params: { categoria: "salud" } },
+    { params: { categoria: "collares" } },
+    { params: { categoria: "juguetes" } },
+  ];
+}
+
 export default function AllProducts({ params }) {
   const { category } = params;
 
