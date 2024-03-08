@@ -6,10 +6,16 @@ import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "@/firebase/config";
 
-const createProduct = async (values) => {
+const createProduct = async (values, file) => {
+  const storageRef = ref(storage, values.slug)
+  const fileSnapshot = await uploadBytes(storageRef, file)
+
+  const fileURL = await getDownloadURL(fileSnapshot.ref)
+
   const docRef = doc(db, "productos", values.slug);
   return setDoc(docRef, {
     ...values,
+    image: fileURL
   }).then(() => console.log("Producto creado exitosamente"));
 };
 
@@ -27,6 +33,8 @@ const CreateForm = () => {
     slug: "",
   });
 
+  const [file, setFile] = useState(null)
+
   const handleChange = (e) => {
     setValues({
       ...values,
@@ -36,8 +44,8 @@ const CreateForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createProduct(values);
-    console.log(values);
+    await createProduct(values, file);
+    console.log(values, file);
   };
 
   return (
@@ -53,8 +61,8 @@ const CreateForm = () => {
         <label>Categoria: </label>
         <input type="text" value={values.category} required className="p-2 rounded w-full border border-blue-100 block my-4" name="category" onChange={handleChange} />
 
-        {/* <label>Imagen: </label>
-        <input type="file" onChange={(e) => setFile(e.target.files[0])} className="p-2 rounded w-full border border-blue-100 block my-4" /> */}
+        <label>Imagen: </label>
+        <input type="file" onChange={(e) => setFile(e.target.files[0])} className="p-2 rounded w-full border border-blue-100 block my-4" />
 
         <label>Nombre: </label>
         <input type="text" value={values.name} required className="p-2 rounded w-full border border-blue-100 block my-4" name="name" onChange={handleChange} />
