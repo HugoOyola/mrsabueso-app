@@ -1,8 +1,8 @@
 "use client";
 
-import { auth } from "@/firebase/config";
+import { auth, provider } from "@/firebase/config";
 import { createContext, useContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup } from "firebase/auth";
 
 const AuthContext = createContext();
 
@@ -27,6 +27,10 @@ export const AuthProvider = ({ children }) => {
     await signOut(auth);
   };
 
+  const googleLogin = async () => {
+    await signInWithPopup(auth, provider);
+  };
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       console.log(user);
@@ -47,5 +51,5 @@ export const AuthProvider = ({ children }) => {
     });
   }, []);
 
-  return <AuthContext.Provider value={{ user, registerUser, loginUser, logout }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ user, registerUser, loginUser, logout, googleLogin }}>{children}</AuthContext.Provider>;
 };
