@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const ProductsTable = async () => {
-  const products = await fetch(`http://localhost:3000/api/productos/todos`, {
+  const products = await fetch(`http://127.0.0.1:3000/api/productos/todos`, {
     cache: "no-store",
   }).then((r) => r.json());
 
@@ -57,9 +57,9 @@ const ProductsTable = async () => {
                   <Link href={`/administrador/edit/${product.slug}`} className="rounded bg-verde p-2 text-white">
                     Editar
                   </Link>
-                  <Link href={`/administrador/delete/${product.slug}`} className="rounded bg-salmon ml-2 p-2 text-white">
+                  {/* <Link href={`/administrador/delete/${product.slug}`} className="rounded bg-salmon ml-2 p-2 text-white">
                     Eliminar
-                  </Link>
+                  </Link> */}
                 </td>
               </tr>
             ))}

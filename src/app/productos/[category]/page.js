@@ -19,12 +19,12 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
 export function generateStaticParmas() {
   return [
-    { params: { categoria: "todos" } },
-    { params: { categoria: "accesorios" } },
-    { params: { categoria: "alimentos" } },
-    { params: { categoria: "salud" } },
-    { params: { categoria: "collares" } },
-    { params: { categoria: "juguetes" } },
+    { params: { category: "todos" } },
+    { params: { category: "accesorios" } },
+    { params: { category: "alimentos" } },
+    { params: { category: "salud" } },
+    { params: { category: "collares" } },
+    { params: { category: "juguetes" } },
   ];
 }
 
