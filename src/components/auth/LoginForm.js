@@ -48,7 +48,7 @@ const LoginForm = () => {
           Ingresar
         </Boton>
         <Boton onClick={() => registerUser(values)}> Registrarme</Boton>
-        <Boton onClick={googleLogin} className="mt-4 block">Iniciar Sesión con Google</Boton>
+        <Boton onClick={googleLogin} className="mt-4 block bg-salmon">Iniciar Sesión con Google</Boton>
       </form>
     </div>
   );

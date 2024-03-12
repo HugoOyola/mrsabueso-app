@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { TrashIcon } from "../IconComponents";
-
 const ProductsTable = async () => {
   const products = await fetch(`http://localhost:3000/api/productos/todos`, {
     cache: "no-store",
@@ -56,10 +54,10 @@ const ProductsTable = async () => {
                 <td className="p-2">{product.slug}</td>
                 <td className="p-2 truncate max-w-prose">{product.description}</td>
                 <td className="p-2">
-                  <Link href={`/administrador/edit/${product.slug}`} className="rounded bg-green-400 p-2 text-white">
+                  <Link href={`/administrador/edit/${product.slug}`} className="rounded bg-verde p-2 text-white">
                     Editar
                   </Link>
-                  <Link href={`/administrador/delete/${product.slug}`} className="rounded bg-red-400 ml-2 p-2 text-white">
+                  <Link href={`/administrador/delete/${product.slug}`} className="rounded bg-salmon ml-2 p-2 text-white">
                     Eliminar
                   </Link>
                 </td>
