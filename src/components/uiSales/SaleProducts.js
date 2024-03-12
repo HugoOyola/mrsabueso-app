@@ -1,15 +1,20 @@
 import ProductCard from "../uiProducts/ProductCard";
 
-const PetProducts = async () => {
-  const products = await fetch(`http://localhost:3000/api/ofertas/`, {
-    cache: "no-store",
-    next: {
-      tags: ["ofertas"],
-    },
-  }).then((res) => res.json());
+const getPetProducts = async () => {
+  const response = await fetch(`http://localhost:3000/api/ofertas`, { next: {
+              revalidate: 3600
+          }
+      } )
 
+      if (!response.ok) {
+          throw new Error("Falló petición de posts")
+      }
+
+      return response.json()
+  }
   // console.log(products);
-
+  const PetProducts = async () => {
+const products = await getPetProducts();
   return (
     <div className="mx-auto px-4 sm:px-6 lg:px-8 pb-6">
       <h2 className="text-2xl font-semibold mb-4">Mr. Ofertas 🐾</h2>

@@ -2,7 +2,7 @@ import LoginForm from "@/components/auth/LoginForm";
 
 const LoginPage = () => {
   return (
-    <div className="h-screen">
+    <div>
       <LoginForm />
     </div>
   );

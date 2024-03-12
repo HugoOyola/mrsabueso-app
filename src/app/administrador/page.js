@@ -3,12 +3,16 @@
 import LogoutButton from '@/components/administrador/LogoutButton';
 import ProductsTable from '@/components/administrador/ProductsTable';
 
-export default function Admin() {
+const Admin = () => {
   return (
   <div className='wrapper p-4'>
     <div className="h-[70px]"></div>
     <LogoutButton />
+    <h2 className="text-2xl my-10 border-b pb-4">Panel Administración</h2>
     <ProductsTable />
   </div>
   );
 }
+
+
+export default Admin;

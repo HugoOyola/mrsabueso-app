@@ -26,10 +26,6 @@ const links = [
     label: "Productos",
   },
   {
-    href: "/ofertas",
-    label: "Ofertas",
-  },
-  {
     href: "/marcas",
     label: "Marcas",
   }
