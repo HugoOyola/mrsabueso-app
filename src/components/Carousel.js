@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -31,19 +31,19 @@ export default function App() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="/slider-0.jpeg" />
+          <Image src="/slider-0.jpeg" width={2267} height={556} alt="Slider de imagenes" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/slider-1.jpeg" />
+          <Image src="/slider-1.jpeg" width={2267} height={556} alt="Slider de imagenes" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/slider-2.jpeg"/>
+          <Image src="/slider-2.jpeg" width={2267} height={556} alt="Slider de imagenes" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/slider-3.jpeg"/>
+          <Image src="/slider-3.jpeg" width={2267} height={556} alt="Slider de imagenes" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/slider-4.jpeg"/>
+          <Image src="/slider-4.jpeg" width={2267} height={556} alt="Slider de imagenes" />
         </SwiperSlide>
       </Swiper>
     </>

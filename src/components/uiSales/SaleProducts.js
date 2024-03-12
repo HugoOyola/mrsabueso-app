@@ -1,8 +1,8 @@
 import ProductCard from "../uiProducts/ProductCard";
 
-const PetProducts = async ({ onSale }) => {
+const PetProducts = async () => {
   const products = await fetch(`http://localhost:3000/api/ofertas/`, {
-    cache: "force-cache",
+    cache: "no-store",
     next: {
       tags: ["ofertas"],
     },

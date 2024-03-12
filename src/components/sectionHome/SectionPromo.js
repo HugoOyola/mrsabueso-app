@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const OfertasSection = async ({promociones1}) => {
+const OfertasSection = async () => {
   const promo1 = await fetch(`http://localhost:3000/api/inicio/promociones1`, { cache: "force-cache" }).then( r => r.json());
   // console.log(promo1);
 
