@@ -1,7 +1,7 @@
 import ProductCard from "./ProductCard";
 
 const ProductPet = async ({ pettype }) => {
-  const products = await fetch(`http://localhost:3000/api/mascota/${pettype}`, { cache: "force-cache", next:{
+  const products = await fetch(`${process.env.NEXT_URL_PROD}/mascota/${pettype}`, { cache: "force-cache", next:{
     tags:['productos']
   } }).then((res) => res.json());
 

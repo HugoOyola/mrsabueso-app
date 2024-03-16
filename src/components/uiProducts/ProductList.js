@@ -1,7 +1,7 @@
 import ProductCard from "./ProductCard";
 
 const ProductList = async ({ category }) => {
-  const products = await fetch(`http://localhost:3000/api/productos/${category}`, { cache: "force-cache", next:{
+  const products = await fetch(`${process.env.NEXT_URL_PROD}/productos/${category}`, { cache: "force-cache", next:{
     tags:['productos']
   } }).then((res) => res.json());
 
@@ -25,7 +25,7 @@ export default ProductList;
 // import ProductCard from "../uiProducts/ProductCard";
 
 // const ProductList = async ({ products }) => {
-  // const products = await fetch(`http://localhost:3000/api/productos/${category}`, { cache: "force-cache" }).then((r) => r.json());
+  // const products = await fetch(`${process.env.NEXT_URL_PROD}/productos/${category}`, { cache: "force-cache" }).then((r) => r.json());
 
   // console.log(products);
 

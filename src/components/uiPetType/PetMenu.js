@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 const PetMenu = async ({petType}) => {
-  const menus = await fetch(`http://localhost:3000/api/menu/${petType}`, { cache: "force-cache" }).then((res) => res.json());
+  const menus = await fetch(`${process.env.NEXT_URL_PROD}/menu/${petType}`, { cache: "force-cache" }).then((res) => res.json());
 
   menus.sort((a, b) => a.label.localeCompare(b.label))
 

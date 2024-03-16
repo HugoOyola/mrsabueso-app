@@ -1,7 +1,7 @@
 import ProductCard from "../uiProducts/ProductCard";
 
 const getPetProducts = async () => {
-  const response = await fetch(`http://localhost:3000/api/ofertas`, { next: {
+  const response = await fetch(`${process.env.NEXT_URL_PROD}/ofertas`, { next: {
               revalidate: 3600
           }
       } )

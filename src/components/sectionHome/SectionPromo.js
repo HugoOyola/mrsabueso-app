@@ -1,8 +1,10 @@
 import Image from "next/image";
 
+const URL = process.env.NEXT_URL_PROD;
+
 const OfertasSection = async () => {
-  const promo1 = await fetch(`http://localhost:3000/api/inicio/promociones1`, { cache: "force-cache" }).then( r => r.json());
-  // console.log(promo1);
+  const promo1 = await fetch(`${URL}/inicio/promociones1`, { cache: "force-cache" }).then( r => r.json());
+  console.log(promo1);
 
   return (
     <section className="bg-white p-4 wrapper">

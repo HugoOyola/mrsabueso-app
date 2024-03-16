@@ -5,7 +5,7 @@ const capitalize = (str) => {
 };
 
 const PetProducts = async ({ petType }) => {
-  const products = await fetch(`http://localhost:3000/api/mascota/${petType}`, {
+  const products = await fetch(`${process.env.NEXT_URL_PROD}/mascota/${petType}`, {
     cache: "force-cache",
     next: {
       tags: ["tipoMascota"],
